@@ -29,12 +29,12 @@ const API_KEY = 'M9hnOF0e6SM1BMMKqCobX4muvOHXYGu0';
 
 export const fetchNewsData = async (
   keyword = '',
-  page = 0
+  page = 0,
 ): Promise<NewsData> => {
   const response = await axios.get(
     `https://api.nytimes.com/svc/search/v2/articlesearch.json?${
       keyword !== '' ? `q=${keyword}` : ``
-    }&page=${page}&api-key=${API_KEY}`
+    }&page=${page}&api-key=${API_KEY}`,
   );
 
   if (response.statusText !== 'OK') {
