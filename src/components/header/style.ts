@@ -1,10 +1,17 @@
 import styled from 'styled-components';
 
+export const HeaderWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: fit-content;
+  transition: all 0.5s;
+`;
+
 export const Box = styled.div`
   display: flex;
   width: 100%;
   padding: 48px 24px;
-
   justify-content: center;
   align-items: center;
 `;
@@ -43,4 +50,49 @@ export const SearchIcon = styled.i`
   left: 1.2rem;
   right: auto;
   color: #888;
+`;
+
+export const ButtonWrapper = styled.div`
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  heigh: 320px;
+  align-items: center;
+`;
+
+export const SignUpButton = styled.button`
+  display: block;
+  width: 6rem;
+  height: 2.5rem;
+  margin: 1rem 2rem 0 0;
+  align-self: flex-end;
+  border: none;
+  border-radius: 6px;
+  background-color: #dfdfdf;
+  font-weight: bold;
+  -webkit-transition-duration: 0.4s;
+  transition-duration: 0.4s;
+  cursor: pointer;
+
+  &:hover {
+    background-color: black;
+    color: #fff;
+  }
+
+  &: focus {
+    outline: none;
+  }
+
+  @media only screen and (max-width: 767.97px) {
+    width: 5.5rem;
+    height: 2.25rem;
+    font-size: 0.85rem;
+  }
+
+  @media only screen and (max-width: 575.97px) {
+    width: 5rem;
+    height: 2rem;
+    font-size: 0.75rem;
+    margin: 0.7rem 1.5rem 0 0;
+  }
 `;

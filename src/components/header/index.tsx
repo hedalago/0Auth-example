@@ -3,7 +3,15 @@ import { debounce } from 'lodash';
 import 'font-awesome/css/font-awesome.min.css';
 
 import { useSelector } from 'react-redux';
-import { Box, InputWrapper, SearchInput, SearchIcon } from './style';
+import {
+  Box,
+  HeaderWrapper,
+  InputWrapper,
+  SearchInput,
+  SearchIcon,
+  ButtonWrapper,
+  SignUpButton,
+} from './style';
 import { useNewsFetch, useSetKeyword } from '../../hooks';
 import { RootState } from '../../store';
 
@@ -28,15 +36,20 @@ export default function Header(): JSX.Element {
   );
 
   return (
-    <Box>
-      <InputWrapper>
-        <SearchInput
-          type="text"
-          placeholder="Search news"
-          onChange={handleKeywordChange}
-        />
-        <SearchIcon className="fa fa-search fa-lg" />
-      </InputWrapper>
-    </Box>
+    <>
+      <ButtonWrapper>
+        <SignUpButton>Sign Up</SignUpButton>
+      </ButtonWrapper>
+      <Box>
+        <InputWrapper>
+          <SearchInput
+            type="text"
+            placeholder="Search news"
+            onChange={handleKeywordChange}
+          />
+          <SearchIcon className="fa fa-search fa-lg" />
+        </InputWrapper>
+      </Box>
+    </>
   );
 }
