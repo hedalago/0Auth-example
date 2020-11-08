@@ -1,25 +1,20 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter, Route } from 'react-router-dom';
 
-function App() {
+import { Header, List, Nav, SavedList } from './components';
+import { Global } from './styles';
+
+function App(): JSX.Element {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <Global />
+      <Header />
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
+        <Nav />
+        <Route path="/" exact component={List} />
+        <Route path="/saved" exact component={SavedList} />
+      </BrowserRouter>
+    </>
   );
 }
 
