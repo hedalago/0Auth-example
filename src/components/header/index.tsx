@@ -5,7 +5,6 @@ import 'font-awesome/css/font-awesome.min.css';
 import { useSelector } from 'react-redux';
 import {
   Box,
-  HeaderWrapper,
   InputWrapper,
   SearchInput,
   SearchIcon,

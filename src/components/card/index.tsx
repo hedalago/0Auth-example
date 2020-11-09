@@ -48,7 +48,6 @@ export default function Card({ news }: CardProp): JSX.Element {
         images={news.multimedia}
         onClick={cardClickHandler}
       />
-
       <TextWrapper onClick={cardClickHandler}>
         <Title>{news.headline.main}</Title>
         <Description>

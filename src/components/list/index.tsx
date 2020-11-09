@@ -2,6 +2,7 @@ import React, { useCallback, useEffect } from 'react';
 
 import { useSelector, useDispatch } from 'react-redux';
 import Card from '../card';
+import Recommend from '../recommend';
 import { useNewsFetch, useNextPage, useScrollLocation } from '../../hooks';
 import { NewsData } from '../../apis';
 import { Layout, ContentList, ContentWrapper } from './style';
@@ -46,16 +47,19 @@ function List(): JSX.Element {
   });
 
   return (
-    <Layout>
-      <ContentWrapper>
-        <ContentList>
-          {newsState.map((article: NewsData) => {
-            // eslint-disable-next-line no-underscore-dangle
-            return <Card key={article._id} news={article} />;
-          })}
-        </ContentList>
-      </ContentWrapper>
-    </Layout>
+    <>
+      <Recommend />
+      <Layout>
+        <ContentWrapper>
+          <ContentList>
+            {newsState.map((article: NewsData) => {
+              // eslint-disable-next-line no-underscore-dangle
+              return <Card key={article._id} news={article} />;
+            })}
+          </ContentList>
+        </ContentWrapper>
+      </Layout>
+    </>
   );
 }
 
